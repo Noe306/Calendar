@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team Calendar</title>
+    <link rel="stylesheet" href="CSS/CSS general.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">Team Calendar</h1>
+        <nav class="nav_bar">
+            <a href="index.html" class="body_nav"><strong>Acceuil</strong></a>
+            <a href="nav/perso.html" class="body_nav"><strong>My Calendar</strong></a>
+            <a href="nav/login.html" class="body_nav"><strong>Log In</strong></a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <div id="calendar"></div>
+                <div class="view-selector">
+                    <label for="viewSelect">Select View: </label>
+                    <select id="viewSelect">
+                        <option value="month">Monthly View</option>
+                        <option value="agendaWeek">Weekly View</option>
+                        <option value="agendaDay">Daily View</option>
+                    </select>
+                </div>
+            </section>
+            <section>
+                <div id="eventModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn">&times;</span>
+                        <h2>Add New Event</h2>
+                        <form id="eventForm">
+                            <label for="eventTitle">Event Title:</label>
+                            <input type="text" id="eventTitle" name="eventTitle" required><br><br>
+    
+                            <label for="eventDescription">Event Description:</label>
+                            <textarea id="eventDescription" name="eventDescription"></textarea><br><br>
+    
+                            <label for="eventStart">Start Date:</label>
+                            <input type="datetime-local" id="eventStart" name="eventStart" required><br><br>
+    
+                            <label for="eventEnd">End Date:</label>
+                            <input type="datetime-local" id="eventEnd" name="eventEnd"><br><br>
+    
+                            <button type="submit">Save Event</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="app.js"></script><!-- Link to the external JS file -->
+</body>
+</html>
